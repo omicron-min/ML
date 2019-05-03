@@ -26,3 +26,17 @@ def load_housing_data(housing_path=HOUSING_PATH):
 ##
 housing = load_housing_data()
 housing.head()
+##
+housing.info()
+##
+housing["ocean_proximity"].value_counts()
+##
+housing["median_house_value"].value_counts()
+##
+housing.describe()
+##
+%matplotlib inline
+
+import matplotlib.pyplot as plt
+housing.hist(bins=50, figsize=(20,15))
+plt.show()
