@@ -131,7 +131,22 @@ corr_matrix = housing.corr()
 ##
 corr_matrix["median_house_value"].sort_values(ascending=False)
 ##
-
+strat_train_set.head()
+##
+housing = strat_train_set.drop("median_house_value", axis=1)
+housing_labels = strat_train_set["median_house_value"].copy()
+##
+housing.info()
+##
+housing1 = housing.dropna(subset=["total_bedrooms"])
+housing1.info()
+##
+housing2 = housing.drop("total_bedrooms", axis=1)
+housing2.info()
+##
+median = housing["total_bedrooms"].median()
+housing["total_bedrooms"].fillna(median, inplace=True)
+housing.info()
 ##
 
 ##
@@ -140,11 +155,6 @@ corr_matrix["median_house_value"].sort_values(ascending=False)
 
 ##
 
+##
 
-
-
-
-
-
-
-
+##
